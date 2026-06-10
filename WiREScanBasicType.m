@@ -26,16 +26,16 @@
 % of this file must be in compliance with the licensing of the 
 % Renishaw WiRE WDF access package.
 
-classdef WiREScanBasicType < uint32
-    enumeration
-        Unspecified        (0),
-        Static             (1),
-        Continuous         (2),
-        StepRepeat         (3),
-        FilterScan         (4),
-        FilterImage        (5),
-        StreamLine         (6),
-        StreamLineHR       (7),
-        PointDetector      (8)
+classdef WiREScanBasicType
+   properties(Constant)
+        Unspecified       = 0
+        Static            = 1
+        Continuous        = 2
+        StepRepeat        = 3
+        FilterScan        = 4
+        FilterImage       = 5
+        StreamLine        = 6
+        StreamLineHR      = 7
+        PointDetector     = 8
     end;
 end

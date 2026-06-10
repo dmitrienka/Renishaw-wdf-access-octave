@@ -1614,9 +1614,9 @@ classdef WdfReader < handle
             WL=imread(tempimgpath);                                 %read the temporary file in using imread function
             % read the EXIF data and create x and y axes
             info=imfinfo(tempimgpath);
-            FOV=info.UnknownTags(2).Value./info.UnknownTags(3).Value;
-            x=linspace(info.UnknownTags(1).Value(1),info.UnknownTags(1).Value(1)+FOV(1),info.Width);
-            y=linspace(info.UnknownTags(1).Value(2),info.UnknownTags(1).Value(2)+FOV(2),info.Height);
+            FOV=1;
+            x=1:info.Width;
+            y=1:info.Height;
         end
 
         %% Get a per-spectrum before / after image
@@ -1628,14 +1628,14 @@ classdef WdfReader < handle
             end
             tempimgpath = fullfile(tempdir, 'img_temp.jpg');        %create image jpg file in user's temp folder
             fid = fopen(tempimgpath, 'w');                          %open the file with write access
-            fwrite(fid, imgdata,'*uint8');                          %write the data as bytes
+            fwrite(fid, imgdata,'uint8');                          %write the data as bytes
             fclose(fid);                                            %close the temporary file
             IMG=imread(tempimgpath);                                %use imread to avoid having to write a function to decompress jpgs
             % read the EXIF data and create x and y axes
             info=imfinfo(tempimgpath);                           
-            FOV=info.UnknownTags(2).Value./info.UnknownTags(3).Value;
-            x=linspace(info.UnknownTags(1).Value(1),info.UnknownTags(1).Value(1)+FOV(1),info.Width);
-            y=linspace(info.UnknownTags(1).Value(2),info.UnknownTags(1).Value(2)+FOV(2),info.Height);
+            FOV=1;
+            x=1:info.Width;
+            y=1:info.Height;
         end
 
         %% Get a per-spectrum item

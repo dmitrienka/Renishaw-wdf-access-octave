@@ -7,12 +7,12 @@
 % of this file must be in compliance with the licensing of the 
 % Renishaw WiRE WDF access package.
 
-classdef WiREFocusMode < uint32
-    enumeration
-        Uninitialised       (0),
-        Regular             (1),
-        Confocal            (2),
-        Linefocus           (3),
-        Streamline          (4)
+classdef WiREFocusMode
+   properties(Constant)
+        Uninitialised       =  0
+        Regular             =  1
+        Confocal            =  2
+        Linefocus           =  3
+        Streamline          =  4
     end
 end

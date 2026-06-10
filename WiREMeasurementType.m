@@ -15,11 +15,11 @@
 % of this file must be in compliance with the licensing of the 
 % Renishaw WiRE WDF access package.
 
-classdef WiREMeasurementType < uint32
-    enumeration
-        Unspecified        (0),
-        Single             (1),
-        Series             (2),
-        Map                (3)
+classdef WiREMeasurementType
+properties(Constant)
+        Unspecified        = 0
+        Single             = 1
+        Series             = 2
+        Map                = 3
     end;
 end
